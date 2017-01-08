@@ -1,0 +1,125 @@
+package package1;
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class Zomato {
+    public static void main(String[] args) {
+    WebDriver driver = new FirefoxDriver();
+
+    // Maximize Window
+   driver.manage().window().maximize();
+  
+    // Wait For Page To Load
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+
+   //Navigate to Zomato  website
+   driver.get(https://www.zomato.com);
+
+driver.findElement(By.id("signin-link")).click();
+
+
+//CASE1-. Email and Password are entered wrong 	
+
+try
+{
+		 WebElement email = driver.findElement(By.id("ld-email”) ).sendKeys("ENTER INCORRECT MAIL ID");
+ WebElement password = driver.findElement(By.id("ld-password”)).sendKeys("ENTER INCORRECT PASSWORD");
+ WebElement button = driver.findElement(By.id("ld-submit-global”)).click();
+ 
+ WebElement ZomatoText = driver.findElement(By.xpath(“dummy name’s xpath"));
+ String text = ZomatoText.getText();
+ if(text.equals("Dummy Name"))
+ {
+ System.out.println("----------Sucessfuln -------");
+ }
+ else
+ {
+ System.out.println("----------Credentials Wrong ----------");
+		 }
+		 
+  }
+catch(Throwable e)
+{
+	
+	  System.out.println("Errororrect Email and Password. \n-----------------------");		  
+  System.out.println("Elementfound: "+e.getMessage() + "\n-----------------------");
+}
+ 
+driver.findElement(By.id("ld-email ")).clear();
+driver.findElement(By.id("ld-password")).clear();
+
+
+
+
+
+// CASE- 2. Email is wrong and Password is correct 	
+ try 
+ {
+	 
+		WebElement email = driver.findElement(By.id("ld-email”)).sendKeys("ENTER INCORRECT EMAIL ID");
+WebElement password = driver.findElement(By.id("ld-password”)).sendKeys("ENTER CORRECT PASSWORD");
+WebElement button = driver.findElement(By.id("ld-submit-global”)).click();
+WebElement ZomatoText = driver.findElement(By.xpath(“dummy name’s xpath"));
+ String text = ZomatoText.getText();
+ if(text.equals("Dummy Name"))
+ {
+ System.out.println("----------Sucessfuln -------");
+ }
+ else
+ {
+ System.out.println("----------Credentials Wrong ----------");
+		 }
+		 
+  }
+catch(Throwable e)
+{
+	
+	  System.out.println("Errororrect Email and Password. \n-----------------------");		  
+  System.out.println("Elementfound: "+e.getMessage() + "\n-----------------------");
+}
+ 
+  driver.findElement(By.id("ld-email ")).clear();
+  driver.findElement(By.id("ld-password ")).clear();
+//CASE- 3. Email is correct and Password is wrong 	
+ try
+ {
+		 WebElement email = driver.findElement(By.id("ld-email 
+“)).sendKeys("ENTER CORRECT EMAIL ID");
+ WebElement password = driver.findElement(By.id("ld-password“)).sendKeys("ENTER INCORRECT PASSWORD");
+ WebElement button = driver.findElement(By.id("ld-submit-global“)).click();
+	 
+ 
+	WebElement ZomatoText = driver.findElement(By.xpath(“dummy name’s xpath "));
+ String text = ZomatoText.getText();
+ if(text.equals("Dummy Name"))
+ {
+ System.out.println("----------Sucessfuln -------");
+ }
+ else
+ {
+ System.out.println("----------Credentials Wrong ----------");
+		 }
+		 
+  }
+catch(Throwable e)
+{
+	
+	  System.out.println("Errororrect Email and Password. \n-----------------------");		  
+  System.out.println("Elementfound: "+e.getMessage() + "\n-----------------------");
+}
+  }
+
+  driver.findElement(By.id("ld-email ")).clear();
+  driver.findElement(By.id("ld-password ")).clear();
+
+//closing current driver window	
+		driver.close();
+		
+	}
+}
+
+		
+
