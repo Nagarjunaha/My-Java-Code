@@ -54,7 +54,7 @@ public class Check_404_Error {
  
 	{
  
-		//url = new URL("http://yahoo.com");
+		
  
 		String response = "";
  
@@ -90,9 +90,9 @@ public class Check_404_Error {
  
 			FirefoxDriver ff = new FirefoxDriver();
  
-			ff.get("http://toolsqa.com/automation-practice-switch-windows/");
+			ff.get("BaseURL");
  
-			//ff.get("http://www.yahoo.com/");		    
+				    
  
 		    List <WebElement> allImages = findAllLinks(ff);    
  
