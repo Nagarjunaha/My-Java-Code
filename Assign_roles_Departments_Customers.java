@@ -9,14 +9,14 @@ public class Assign_roles_Departments_Customers
 {
 	public static void main(String[] args)throws InterruptedException 
 	{
-			String baseUrl="http://192.168.1.60:7080/home";
+			String baseUrl="BASEURL";
 			WebDriver driver;
 			driver=new FirefoxDriver();
 			driver.get(baseUrl);	
 		// Login as CLIENT
 			driver.findElement(By.id("pop")).click();	
 			driver.findElement(By.id("_58_uname")).clear();
-			driver.findElement(By.id("_58_uname")).sendKeys("rafiq.zama@msourceone.com");
+			driver.findElement(By.id("_58_uname")).sendKeys("test_username");
 			driver.findElement(By.id("_58_pword")).sendKeys("test");
 			driver.findElement(By.id("LoginButton")).click();
 			Thread.sleep(4000);
